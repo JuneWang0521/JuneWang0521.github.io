@@ -255,9 +255,9 @@ sidebar:
 
 index:
   showtag:
-  - 人生经验
-  - ICPC模板
-  - 水野爱
+  #- 人生经验
+  #- ICPC模板
+  #- 水野爱
 
 post:
   meta:
