@@ -2,6 +2,8 @@
 layout: index
 title: 星落之夜
 ---
+![BackGround](/public/image/BackGround.jpg)
+
 ## 联系方式
 
 - 电话: **+86 18088706113**
