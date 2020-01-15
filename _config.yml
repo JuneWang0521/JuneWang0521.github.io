@@ -206,15 +206,15 @@ sidebar:
     class: 'fab fa-zhihu fa-fw'
   nav:
   - title: '<i class="fas fa-home fa-fw"></i> 首页'
-    href: /
+    href: /JuneWang0521.github.io
   - title: '<i class="fab fa-readme fa-fw"></i> 关于'
-    href: /about
+    href: /JuneWang0521.github.io/about
   - title: '<i class="fas fa-comments fa-fw"></i> 留言'
-    href: /comments
+    href: /JuneWang0521.github.io/comments
   - title: '<i class="fas fa-tags fa-fw"></i> 标签'
-    href: /tags
+    href: /JuneWang0521.github.io/tags
   - title: '<i class="fas fa-archive fa-fw"></i> 归档'
-    href: /archive
+    href: /JuneWang0521.github.io/archive
   simple_jekyll_search:
     enable: true
     autoloader: /public/simple-jekyll-search/autoloader.js
