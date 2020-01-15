@@ -1,6 +1,7 @@
 ---
-title: Unity中Lerp的用法
-tags: Unity
+title: Unity基础：Lerp的用法
+categories: Unity
+tags: Unity基础
 ---
 
 Lerp函数在Mathf，Vector3, 等类中都有，用法都类似，作用都是按照百分比取得从一个值过度到另外一个值的中间值。下面说的内容针对各中类的Lerp函数都是通用的。
