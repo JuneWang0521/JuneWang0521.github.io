@@ -42,7 +42,7 @@ git clone
 
 ![文件结构](/public/image/2019-01-16-5.jpg)
 
-##三、修改配置文件
+## 三、修改配置文件
 
 修改配置文件`_config.yml`
 
@@ -50,7 +50,7 @@ git clone
 
 ![修改配置](/public/image/2019-01-16-6.jpg)
 
-##四、上传到 github 仓库
+## 四、上传到 github 仓库
 
 将修改后的主题 push 到 github
 
@@ -74,7 +74,7 @@ git push
 
 ![博客地址](/public/image/2019-01-16-8.jpg)
 
-##五、测试
+## 五、测试
 
 点击博客地址即可进入到博客主页，效果如下:
 
@@ -82,7 +82,7 @@ git push
 
 [测试地址](https://junewang0521.github.io/JuneWang0521.github.io/)
 
-##六、发布第一篇博客
+## 六、发布第一篇博客
 
 发布的博客都在文件夹`_post`下面：
 
