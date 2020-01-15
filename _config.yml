@@ -6,8 +6,8 @@ permalink: /posts/:categories/:title # 博文目录
 baseurl: "/JuneWang0521.github.io" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/public`前也要加，即`/your_baseurl/public`。这一项结尾不要有'/'
 
 title: June's blog
-url: http://wu-kan.github.io
-author: WuK
+url: http://JuneWang0521.github.io
+author: June
 
 head: # 删改前确定知道自己在做什么
 - tag: meta # Enable responsiveness on mobile devices
