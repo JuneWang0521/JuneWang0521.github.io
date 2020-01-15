@@ -24,7 +24,7 @@ git clone
 
 ![复制地址](/public/image/2019-01-16-2.jpg)
 
-## 二、选择 jekyll 主题（模板）
+## 二、选择 jekyll 主题
 
 到 [jekyll主题官网](http://jekyllthemes.org) 选择一个自己喜欢的主题，下载到本地。
 
