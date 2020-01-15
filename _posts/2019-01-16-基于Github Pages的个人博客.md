@@ -1,8 +1,6 @@
 ---
 title: 基于Github Pages的个人博客
-categories: 博客搭建
 tags: 博客搭建
-permalink: /JuneWang/_posts
 ---
 ## 引言
 
