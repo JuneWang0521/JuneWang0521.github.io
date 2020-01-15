@@ -6,11 +6,14 @@ categories: Untiy
 Lerp函数在Mathf，Vector3, 等类中都有，用法都类似，作用都是按照百分比取得从一个值过度到另外一个值的中间值。下面说的内容针对各中类的Lerp函数都是通用的。
 
 Lerp的常见“误用”是
+
+```C#
  Update() { 
 
      Transform.position = Vector3.Lerp(transform.position.x, targetPosition, Time.deltaTime);
 
  }
+```
 
 说是“误用”，其实也不完全正确，这种用法是可以工作的，但是常常不是大家的真正需求，很多时候大家使用Lerp都是想达到匀速运动的效果，但如下“误用”却让对象以逐渐降低的速度运动。
 
@@ -21,6 +24,8 @@ Lerp的常见“误用”是
 如果你是误打误撞实现了缓动效果，并且觉得效果不错就没有再深究了，那么建议你继续往下看看。
 
 用Lerp来实现匀速运动的代码
+
+```C#
  float speed = 2.0f; //什么时候开始运动
 
  float startTime = 2.0f; //起始X位置 
@@ -36,8 +41,9 @@ float startX = 0.0f; //结束X位置
  transform.position = new Vector3(lerpValue,0,0); 
 
 } 
+```
 
-一定要理解清楚Mathf.Lerp(float a, float b, float t)第三个参数t的意义，它是一个百分比，最小值有效值是0，最大有效值是1，如果超出了1，就取1，小于0则取0.
+一定要理解清楚`Mathf.Lerp(float a, float b, float t)`第三个参数t的意义，它是一个百分比，最小值有效值是0，最大有效值是1，如果超出了1，就取1，小于0则取0.
 
 它表示从a到b之间，按照t这个百分比来取值，例如a是0，b是100，如果t是0.2,则该函数返回的值是20，如果t是1，该函数返回的值为100.
 
@@ -45,11 +51,8 @@ float startX = 0.0f; //结束X位置
 
 Time.time就是系统运行时间，也就是这个程序开始到现在的时长。
 
-(Time.time - startTime)，上面例子中startTime是2.0f,那么这个式子的取值一开始是-2，2秒时变成0，3秒时变成1，先假设没有乘以speed这个值，整个运动过程会在2秒开始，3秒结束。
+`(Time.time - startTime)`，上面例子中startTime是2.0f,那么这个式子的取值一开始是-2，2秒时变成0，3秒时变成1，先假设没有乘以speed这个值，整个运动过程会在2秒开始，3秒结束。
 
 物体运动的速度是距离差（在本例中是10.0f）除以1秒。乘以一个speed以后，实际上是在调整整体的运动时间。 
 假设speed为0.1f，则运动的时间变为2秒开始12秒结束，运行时间变成了10，则速度变成原先的1/10， 
 同理，假设speed 为10f，则运动时间变为2秒开始2.1秒结束，速度变成原先的10倍。
-————————————————
-版权声明：本文为CSDN博主「MonoBehaviour」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/MonoBehaviour/article/details/79085547
