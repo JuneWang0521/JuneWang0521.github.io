@@ -8,11 +8,9 @@ Lerp函数在Mathf，Vector3, 等类中都有，用法都类似，作用都是�
 
 Lerp的常见“误用”是
 
-```C#
+```cs
  Update() { 
-
      Transform.position = Vector3.Lerp(transform.position.x, targetPosition, Time.deltaTime);
-
  }
 ```
 
@@ -26,21 +24,15 @@ Lerp的常见“误用”是
 
 用Lerp来实现匀速运动的代码
 
-```C#
- float speed = 2.0f; //什么时候开始运动
-
- float startTime = 2.0f; //起始X位置 
-
+```cs
+float speed = 2.0f; //什么时候开始运动
+float startTime = 2.0f; //起始X位置 
 float startX = 0.0f; //结束X位置
+float endX = 0.0f;
 
- float endX = 0.0f;
-
- void Update() { 
-
- float lerpValue = Mathf.Lerp(startX，endX，(Time.time-startTime )* speed);
-
- transform.position = new Vector3(lerpValue,0,0); 
-
+void Update() { 
+    float lerpValue = Mathf.Lerp(startX，endX，(Time.time-startTime )* speed);
+    transform.position = new Vector3(lerpValue,0,0); 
 } 
 ```
 
