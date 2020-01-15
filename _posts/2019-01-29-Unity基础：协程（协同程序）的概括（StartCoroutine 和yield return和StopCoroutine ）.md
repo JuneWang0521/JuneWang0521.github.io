@@ -1,0 +1,75 @@
+---
+title: Unity基础：协程（协同程序）的概括（StartCoroutine 和yield return和StopCoroutine ）
+categories: Unity
+tags: Unity基础
+---
+MonoBehaviour.StartCoroutine 开始协同程序
+public Coroutine StartCoroutine(IEnumerator routine);
+
+一个协同程序在执行过程中,可以在任意位置使用yield语句。yield的返回值控制何时恢复协同程序向下执行。协同程序在对象自有帧执行过程中堪称优秀。协同程序在性能上没有更多的开销。StartCoroutine函数是立刻返回的,但是yield可以延迟结果。直到协同程序执行完毕。
+
+1.什么是协同程序
+
+unity协程是一个能暂停执行，暂停后立即返回，直到中断指令完成后继续执行的函数。
+
+它类似一个子线程单独出来处理一些问题，性能开销较小，但是他在一个MonoBehaviour提供的主线程里只能有一个处于运行状态的协程。
+
+2.协同程序的特点
+
+1、协程在中断指令(YieldInstruction)产生时暂停执行
+
+2、协程一暂停执行便立即返回 //中断协程后返回主函数，暂停结束后继续执行协程剩余的函数。
+
+3、中断指令完成后从中断指令的下一行继续执行
+
+4、同一时刻、一个脚本实例中可以有多个暂停的协程，但只有一个运行着的协程
+
+5、函数体全部执行完后，协程结束
+
+6、协程可以很好的控制跨越一定帧数后执行的行为
+
+7、协程在性能上、相比于一般函数几乎没有更多的开销
+
+开始一个协同程序
+通过MonoBehaviour提供的StartCoroutine方法来实现启动协同程序。
+
+1、StartCoroutine(IEnumerator routine);
+
+StartCoroutine(Example());（注意方法名后加括号，参数可写在括号里）
+优点：灵活，性能开销小。
+
+缺点：无法单独的停止这个协程，如果需要停止这个协程只能等待协同程序运行完毕或则使用StopAllCoroutine();方法。
+
+2、StartCoroutine (methodName:string, value : object = null);
+
+StartCoroutine("string methodName",value);(注意双引号，value为想传递的参数)
+优点：可以直接通过传入协同程序的方法名来停止这个协程：StopCoroutine("string methodName");(注意双引号)
+缺点：性能的开销较大，只能传递一个参数。
+
+停止协同程序
+1、StopCoroutine(string methodName);
+
+2、StopAllCoroutine();
+
+3、设置gameobject的active为false时可以终止协同程序，但是再次设置为true后协程不会再启动。
+
+协同程序的执行顺序
+开始协同程序 -> 执行协同程序 -> 中断协同程序（中断指令）-> 返回上层继续执行
+
+->中断指令结束后继续执行协同程序剩下的内容
+
+协同程序的注意事项
+1、不能再Update或者FixUpdate方法中使用协同程序，否则会报错。
+
+2、关于中断指令：
+
+中断指令/YieldInstruction,一个协程收到中断指令后暂停执行，返回上层执行同时等待这个指令达成后继续执行。
+
+ 
+
+|指令                                 |描述                   | 实现 |
+|----                                  |  ----  | ----  |
+|WaitForSeconds             |等待指定秒数            |yield return new WaitForSeconds(2);|
+|WaitForFixedUpdate      |等待一个固定帧          |yield return new WaitForFixedUpdate();|
+|WaitForEndOfFrame       |等待帧结束              |yield return new WaitForEndOfFrame();|                         
+|StartCoroutine                |等待一个新协程结束      |yield return StartCoroutine(other coroutine);
