@@ -2,7 +2,7 @@
 layout: index
 title: 星落之夜
 ---
-![BackGround](/public/image/2019-01-16-1.jpg)
+![BackGround](/public/image/BackGround.jpg)
 
 ## 联系方式
 
