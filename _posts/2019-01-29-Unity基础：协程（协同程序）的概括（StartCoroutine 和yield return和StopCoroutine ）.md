@@ -67,9 +67,9 @@ StartCoroutine("string methodName",value);(注意双引号，value为想传递�
 
  
 
-|指令                                 |描述                   | 实现 |
-|----                                  |  ----  | ----  |
-|WaitForSeconds             |等待指定秒数            |yield return new WaitForSeconds(2);|
-|WaitForFixedUpdate      |等待一个固定帧          |yield return new WaitForFixedUpdate();|
-|WaitForEndOfFrame       |等待帧结束              |yield return new WaitForEndOfFrame();|                         
-|StartCoroutine                |等待一个新协程结束      |yield return StartCoroutine(other coroutine);
+| 指令 | 描述 | 实现 |
+| - | - | - |
+| WaitForSeconds | 等待指定秒数 | yield return new WaitForSeconds(2); |
+| WaitForFixedUpdate | 等待一个固定帧 | yield return new WaitForFixedUpdate(); |
+| WaitForEndOfFrame | 等待帧结束 | yield return new WaitForEndOfFrame(); |                         
+| StartCoroutine | 等待一个新协程结束 | yield return StartCoroutine(other coroutine); |
